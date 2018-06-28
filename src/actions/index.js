@@ -1,4 +1,3 @@
-import React from 'react'
 import axios from 'axios'
 
 export const ADD = 'Add'
@@ -6,7 +5,7 @@ export const ADD = 'Add'
 const API = 'https://jsonplaceholder.typicode.com/'
 const DEFAULT = 'posts/1'
 
-export function fetchData (){
+export function fetchData (calbackfn){
 /*  fetch(API+DEFAULT)
   .then(response => response.json())
   .then(parsedJSON => parsedJSON.results.map(user =>
@@ -18,11 +17,10 @@ export function fetchData (){
   }))
   .then(addAction(user))
 */
-
-    const data = axios.get(API+DEFAULT);
-
-    return{
-            type : ADD,
-            data : data
-      }
-    }
+axios.get(API+DEFAULT).then(data =>
+  calbackfn({
+          type : ADD,
+          data : data
+    })
+)
+}
