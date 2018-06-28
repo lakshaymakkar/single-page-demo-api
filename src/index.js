@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStore } from 'redux'
 import fetchApp from './reducers'
-import { fetchData } from './actions'
+import { fetchData }  from './actions'
 import {bindActionCreators} from 'redux'
 import {connect , Provider } from 'react-redux'
 import ReactDOM from 'react-dom'
@@ -15,7 +15,7 @@ class App extends React.Component{
     super(props);
     this.onClick = this.onClick.bind(this)
 }
-/*    componentDidMount(){
+  /*  componentDidMount(){
       const callback = function(payload) {
         this.props.dispatch(payload)
       }
@@ -24,7 +24,10 @@ class App extends React.Component{
 
   onClick()
   {
-    this.props.fetchData()
+    const callback = function(payload) {
+      this.props.dispatch(payload)
+    }
+    this.props.fetchData(callback)
   }
     render(){
       return(
@@ -38,7 +41,7 @@ function mapDisptchToProps(dispatch) {
   return bindActionCreators({fetchData},dispatch)
 }
 
-export default connect(null,mapDisptchToProps)(App)
+App =  connect(null,mapDisptchToProps)(App)
 
 ReactDOM.render(
 <Provider store ={storeData}>
