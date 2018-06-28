@@ -14,9 +14,14 @@ class App extends React.Component{
     componentDidMount(){
        this.props.fetchData()
   }
+
+  onClick()
+  {
+    fetchData()
+  }
     render(){
       <div>
-        <button onClick={fetchData}>Click</button>
+        <button onClick={this.onClick}>Click</button>
       </div>
     }
 }
