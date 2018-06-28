@@ -23,3 +23,5 @@ function mapDisptchToProps(dispatch) {
 }
 
 export default connect(null,mapDisptchToProps)(App)
+
+ReactDOM.render()

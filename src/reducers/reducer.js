@@ -3,7 +3,7 @@ const initState= {
   data: {}
 }
 
-function postApp(state = initState, action){
+function fetchApp(state = initState, action){
   switch(action.type){
     case ADD :
       return Object.assign({},state,{
