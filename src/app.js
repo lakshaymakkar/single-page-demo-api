@@ -7,14 +7,13 @@ import {bindActionCreators} from 'redux'
 const store = createStore(fetchApp)
 
 
-
 class App extends React.Component{
   constructor(props){
     super(props);
 
     componentDidMount(){
-      this.props.fetchData()
-    }
+       this.props.fetchData()
+  }
     render()
   }
 }
