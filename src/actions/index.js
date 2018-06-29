@@ -5,7 +5,7 @@ export const ADD = 'Add'
 const API = 'https://jsonplaceholder.typicode.com/'
 const DEFAULT = 'posts/1'
 
-export function fetchData (calbackfn){
+export function fetchData (){
 /*  fetch(API+DEFAULT)
   .then(response => response.json())
   .then(parsedJSON => parsedJSON.results.map(user =>
@@ -18,9 +18,9 @@ export function fetchData (calbackfn){
   .then(addAction(user))
 */
 axios.get(API+DEFAULT).then(data =>
-  calbackfn({
-          type : ADD,
+    {
+          type : ADD ;
           data : data
-    })
+    }
 )
 }

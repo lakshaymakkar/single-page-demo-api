@@ -24,10 +24,7 @@ class App extends React.Component{
 
   onClick()
   {
-    const callback = function(payload) {
-      this.props.dispatch(payload)
-    }
-    this.props.fetchData(callback)
+    this.props.fetchData()
   }
     render(){
       return(
